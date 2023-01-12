@@ -8,11 +8,11 @@ export class Client {
     type: 'uuid',
     primary: true,
     transformer: {
-      from(value: string) {
+      from(value: any) {
         return new ClientId(value);
       },
       to(clientId: ClientId) {
-        return clientId.toClientIdString();
+        return clientId.clientIdValue;
       },
     },
   })

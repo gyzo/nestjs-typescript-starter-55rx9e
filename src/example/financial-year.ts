@@ -12,7 +12,7 @@ export class FinancialYear {
         return new FinancialYearId(value);
       },
       to(financialYearId: FinancialYearId) {
-        return financialYearId.toFinancialYearIdString();
+        return financialYearId.financialYearValue;
       },
     },
   })
@@ -21,6 +21,8 @@ export class FinancialYear {
   @Column()
   year: string;
 
-  @ManyToOne(() => Client, (client: Client) => client.financialYears, {})
+  @ManyToOne(() => Client, (client: Client) => client.financialYears, {
+    
+  })
   client: Client;
 }
