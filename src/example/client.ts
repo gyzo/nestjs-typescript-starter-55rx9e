@@ -21,6 +21,8 @@ export class Client {
   @Column()
   name: string;
 
-  @OneToMany(() => FinancialYear, (financialYear) => financialYear.client)
+  @OneToMany(() => FinancialYear, (financialYear) => financialYear.client, {
+    cascade: true,
+  })
   financialYears: FinancialYear[];
 }

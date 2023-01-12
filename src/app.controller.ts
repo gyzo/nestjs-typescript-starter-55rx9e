@@ -12,7 +12,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  async getHello(): Promise<Contract> {
+  async getHello(): Promise<Client> {
     // const contractId = new ContractId('Test ID');
     // const contract = new Contract();
 

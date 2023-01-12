@@ -1,7 +1,8 @@
-import { Column, ManyToOne } from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
 import { Client } from './client';
 import { FinancialYearId } from './financial-year-id';
 
+@Entity()
 export class FinancialYear {
   @Column({
     type: 'uuid',
@@ -20,6 +21,6 @@ export class FinancialYear {
   @Column()
   year: string;
 
-  @ManyToOne(() => Client, (client: Client) => client.financialYears)
+  @ManyToOne(() => Client, (client: Client) => client.financialYears, {})
   client: Client;
 }
